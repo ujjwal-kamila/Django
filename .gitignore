@@ -1,8 +1,11 @@
 # Python
+.DS_Store
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
+
+# Video Scripts
+s.txt
+script.txt
 
 # Virtual environment
 .venv/
