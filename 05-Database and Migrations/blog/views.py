@@ -1,30 +1,30 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from .models import Post
 
 
 # create posts 
 
-posts = [
-    {
-        'author': 'Ujjwal',
-        'title': 'Algorithms Practice',
-        'content': 'Two-pointer patterns, sliding window , greedy approaches.',
-        'date_posted': 'September 06, 2025'
-    },
-    {
-        'author': 'Rudra',
-        'title': 'Django Views Explained',
-        'content': 'Function-based vs class-based views with simple URL routing examples.',
-        'date_posted': 'September 06, 2025'
-    },
-    {
-        'author': 'Aashiq',
-        'title': 'Networking 101',
-        'content': 'OSI layers, TCP vs UDP, Routing.',
-        'date_posted': 'September 06, 2025'
-    }
-]
+# posts = [
+#     {
+#         'author': 'Ujjwal',
+#         'title': 'Algorithms Practice',
+#         'content': 'Two-pointer patterns, sliding window , greedy approaches.',
+#         'date_posted': 'September 06, 2025'
+#     },
+#     {
+#         'author': 'Rudra',
+#         'title': 'Django Views Explained',
+#         'content': 'Function-based vs class-based views with simple URL routing examples.',
+#         'date_posted': 'September 06, 2025'
+#     },
+#     {
+#         'author': 'Aashiq',
+#         'title': 'Networking 101',
+#         'content': 'OSI layers, TCP vs UDP, Routing.',
+#         'date_posted': 'September 06, 2025'
+#     }
+# ]
 
 
 
@@ -35,7 +35,7 @@ posts = [
 # Create your views here.
 def home(request):
     context = {
-        'posts': posts
+        'posts': Post.objects.all()
     }
     
     return render(request, 'blog/home.html',context)
