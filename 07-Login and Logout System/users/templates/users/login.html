@@ -1,0 +1,43 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <!-- ✅ Login Section -->
+    <div class="content-section shadow-lg p-4 rounded bg-white">
+
+        <!-- Page Heading -->
+        <h2 class="text-center text-primary mb-4">
+            🔑 Log In to Your Account
+        </h2>
+
+        <!-- Login Form -->
+        <form method="POST" class="px-3">
+            {% csrf_token %}
+            <!-- CSRF protection -->
+
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-3 text-secondary">
+                    Please enter your details 👇
+                </legend>
+                {{ form|crispy }}
+                <!-- Crispy form for nice styling -->
+            </fieldset>
+
+            <!-- Submit Button -->
+            <div class="form-group text-center">
+                <button class="btn btn-info btn-block shadow-sm" type="submit">
+                    🚀 Login
+                </button>
+            </div>
+        </form>
+
+        <!-- Register Link -->
+        <div class="border-top pt-3 text-center">
+            <small class="text-muted">
+                Don’t have an account? ✨
+                <a class="ml-2 text-info font-weight-bold" href="{% url 'register' %}">
+                    Sign Up Now
+                </a>
+            </small>
+        </div>
+    </div>
+{% endblock content %}

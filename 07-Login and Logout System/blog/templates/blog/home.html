@@ -1,0 +1,71 @@
+﻿{% extends "blog/base.html" %}
+{% block content %}
+    <!-- ✅ Loop through all blog posts -->
+    {% for post in posts %}
+        <article class="media content-section shadow-sm p-3 mb-4 rounded bg-white">
+            <!-- Post Body -->
+            <div class="media-body">
+                <!-- Post Meta Info -->
+                <div class="article-metadata d-flex justify-content-between align-items-center">
+                    <div>
+                        👤 <a class="mr-2 font-weight-bold text-primary" href="#">
+                            {{ post.author }}
+                        </a>
+                    </div>
+                    <small class="text-muted">
+                        🗓 {{ post.date_posted|date:"F d, Y" }}
+                    </small>
+                </div>
+
+                <!-- Post Title -->
+                <h2 class="mt-2">
+                    <a class="article-title text-dark font-weight-bold" href="#">
+                        {{ post.title }}
+                    </a>
+                </h2>
+
+                <!-- Post Content -->
+                <p class="article-content text-secondary">
+                    {{ post.content }}
+                </p>
+            </div>
+        </article>
+    {% empty %}
+        <!-- Message when no posts -->
+        <div class="alert alert-info shadow-sm">
+            📭 No posts available yet. Be the first to write something!
+        </div>
+    {% endfor %}
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+        <title>Django BLog - {{ title }}</title>
+    {% else %}
+        <title>Django - Blog</title>
+    {% endif %}
+</head>
+<body>
+
+    <h1>This is a sample home page of my django website</h1>
+
+    {% for post in posts %}
+        <h1>{{ post.title }}</h1>
+        <p>By {{ post.author }} on {{ post.date_posted }}</p>
+        <p>{{ post.content }}</p>
+    {% endfor %}
+
+</body>
+</html> -->

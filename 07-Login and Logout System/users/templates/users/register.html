@@ -1,0 +1,41 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <!-- ✅ Start of Registration Page -->
+    <div class="content-section shadow-sm p-4 rounded bg-white">
+
+        <!-- 🔐 User registration form -->
+        <form method="POST">
+            {% csrf_token %}
+            <!-- Security token to protect against CSRF attacks -->
+
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4 text-primary">
+                    ✨ Join Today ✅
+                </legend>
+                <!-- Heading for the form -->
+
+                {{ form|crispy }}
+                <!-- Render Django form fields with crispy-forms -->
+            </fieldset>
+
+            <!-- Submit Button -->
+            <div class="form-group text-center">
+                <button class="btn btn-success px-4" type="submit">
+                    🚀 Sign Up
+                </button>
+            </div>
+        </form>
+
+        <!-- 🙋 Section for users who already have an account -->
+        <div class="border-top pt-3 text-center">
+            <small class="text-muted">
+                Already have an account? 👉
+                <a class="ml-1 text-info font-weight-bold" href="{% url 'login' %}">
+                    🔑 Sign In
+                </a>
+            </small>
+        </div>
+    </div>
+    <!-- ✅ End of Registration Page -->
+{% endblock content %}
