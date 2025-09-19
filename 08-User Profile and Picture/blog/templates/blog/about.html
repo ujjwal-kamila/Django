@@ -1,0 +1,72 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <!-- Beautiful & Simple About Page -->
+    <div class="content-section bg-white shadow-lg p-5 rounded text-center">
+
+        <!-- Page Title -->
+        <h1 class="mb-4 text-primary">
+            🌟 About Us
+        </h1>
+
+        <!-- Short Description -->
+        <p class="lead text-muted">
+            Welcome to <strong>Django Blog</strong> — a space where ideas, code, and creativity meet.  
+            Our goal is to make learning and sharing knowledge fun, simple, and impactful. 🚀
+        </p>
+
+        <hr class="my-4">
+
+        <!-- Highlights -->
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="border rounded p-3 bg-light">
+                    📝 <h5 class="mt-2">Write</h5>
+                    <p class="small text-muted">Express yourself with engaging blog posts.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="border rounded p-3 bg-light">
+                    🌍 <h5 class="mt-2">Connect</h5>
+                    <p class="small text-muted">Join a community of curious learners.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="border rounded p-3 bg-light">
+                    💡 <h5 class="mt-2">Learn</h5>
+                    <p class="small text-muted">Discover new insights and grow your skills.</p>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-4">
+
+        <!-- Closing Line -->
+        <p class="text-secondary">
+            ✨ Thanks for visiting our blog — we’re happy to have you here!  
+            Keep exploring, keep learning, and keep growing. 🌱
+        </p>
+    </div>
+{% endblock content %}
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+        <title>Django Blog - {{ title }}</title>
+    {% else %}
+        <title>Django - Blog</title>
+    {% endif %}
+</head>
+<body>
+
+    <h1>This is a sample About page of my django website</h1>
+    
+</body>
+</html> -->

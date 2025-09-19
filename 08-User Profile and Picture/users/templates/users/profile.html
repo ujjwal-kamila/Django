@@ -1,0 +1,41 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <!-- Profile Section -->
+    <div class="content-section shadow-lg p-4 rounded bg-white">
+
+        <!-- Profile Header -->
+        <div class="media align-items-center">
+            <!-- User Profile Image -->
+            <img class="rounded-circle account-img mr-3 border shadow-sm" 
+                 src="{{ user.profile.image.url }}" 
+                 alt="{{ user.username }}'s profile picture">
+
+            <!-- User Info -->
+            <div class="media-body">
+                <h2 class="account-heading text-primary mb-1">
+                    👤 {{ user.username }}
+                </h2>
+                <p class="text-secondary mb-0">
+                    ✉️ {{ user.email }}
+                </p>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Profile Update Form -->
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-3">Update Your Profile ✨</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">
+                    💾 Save Changes
+                </button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
